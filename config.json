@@ -1,0 +1,14 @@
+{
+    "small": {
+        "tables": 3,
+        "seats_per_table": 4
+    },
+    "medium": {
+        "tables": 5,
+        "seats_per_table": 6
+    },
+    "large": {
+        "tables": 10,
+        "seats_per_table": 10
+    }
+}

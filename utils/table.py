@@ -47,14 +47,14 @@ class Table():
     """
     Class defining a table with a limited capacity
     """
-    def __init__(self):
+    def __init__(self, seats):
         """
         Constructor
         Takes no parameters
         self.capicty set to 4
         self.seats set to a list of Seats() (lenght defined by capacity)
         """
-        self.capacity = 4
+        self.capacity = seats
         self.seats = [Seat() for _ in range(self.capacity)]
     
     def has_free_spot(self):

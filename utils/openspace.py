@@ -6,14 +6,17 @@ class Openspace():
     Class defining an openspace with a limited capacity
     It assigns people to a random table
     """
-    def __init__(self):
+    def __init__(self, tables, seats):
         """
         Constructor with 0 parameters
         Set self.number_of_tables to 6
         Set self.tables to a list of Tables()  (lenght defined by number_of_tables)
         """
-        self.number_of_tables = 6
-        self.tables = [Table() for _ in range(self.number_of_tables)]
+        self.number_of_tables = tables
+        self.seats_per_table = seats
+        self.tables = [Table(seats) for _ in range(self.number_of_tables)]
+        self.idx = 0
+        self.people_seated = 0
     
     def organize(self, names):
         """
@@ -22,18 +25,23 @@ class Openspace():
         Uses the "random" library to choose a table, will keep looking if the table is full
         Prints to alert if the openspace is at full capacity.
         """
+        random.shuffle(names)
+
         for name in names:
-            print(name)
-            table = random.randint(0, self.number_of_tables-1)
-            while not self.tables[table].has_free_spot():
-                table = random.randint(0, self.number_of_tables-1)
-                if all([not table.has_free_spot() for table in self.tables]):
-                    print("Open space is full!")
-                    break
-            else:
-                self.tables[table].assign_seat(name)
-                continue
-            break
+            if not self.tables[self.idx].has_free_spot():
+                self.idx += 1
+                if self.idx == self.number_of_tables:
+                    answer = input("Openspace is full! Do you want to add a table? (y/n) : ")
+                    if answer == "y":
+                        self.tables.append(Table(self.seats_per_table))
+                        self.number_of_tables += 1
+                    else:
+                        print("Sorry, see you next time.")
+                        break
+            self.tables[self.idx].assign_seat(name)
+            self.people_seated += 1
+            
+            
     
     def display(self):
         """
@@ -52,7 +60,7 @@ class Openspace():
         :param: a string of the file name
         """
         with open(filename, "w") as file:
-            file.write("\n".join(["\n".join([seat.occupant for seat in table.seats]) for table in self.tables]))
+            file.write("\n".join(["\n".join([seat.occupant for seat in table.seats]) for table in self.tables]).strip("\n"))
         
     def __str__(self):
         """
