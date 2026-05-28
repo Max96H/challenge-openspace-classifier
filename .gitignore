@@ -1,0 +1,9 @@
+#by extension
+*.ipynb
+*.DS_Store
+
+#by folder
+__pycache__/
+
+#by file
+sample_README.md
