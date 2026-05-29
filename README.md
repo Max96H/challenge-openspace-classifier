@@ -25,6 +25,9 @@ This script runs everyday to re-assign everybody to a new seat.
 └── README.md
 ```
 
+### For more features -> Go check the branch "Nice-to-have-ft"
+
+
 ## 🛎️ Usage
 
 1. Clone the repository to your local machine.
@@ -66,6 +69,8 @@ if __name__ == "__main__":
 ## ⏱️ Timeline
 
 This project took one day for completion.
+
+28/05/2026
 
 ## 📌 Personal Situation
 This project was done as part of the AI Boocamp at BeCode.org. 
