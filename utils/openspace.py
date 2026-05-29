@@ -41,7 +41,7 @@ class Openspace():
         Goes table by table and prints out the names of occupants.
         """
         for i, table in enumerate(self.tables):
-            print(f"Table {i + 1}:")
+            print(f"\nTable {i + 1}:")
             for seat in table.seats:
                 print(f"  - {seat.occupant}")
     
