@@ -50,8 +50,7 @@ class Table():
     def __init__(self, seats):
         """
         Constructor
-        Takes no parameters
-        self.capicty set to 4
+        :param: an integer to set self.capacity
         self.seats set to a list of Seats() (lenght defined by capacity)
         """
         self.capacity = seats
