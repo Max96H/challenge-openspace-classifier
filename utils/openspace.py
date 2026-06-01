@@ -35,15 +35,19 @@ class Openspace():
         for i, name in enumerate(names):
             seated = False
 
+            #checking that it is not the last and delta of capacity with next Table
             if i != len(names) - 1 and self.tables[self.idx].left_capacity() + 2 <= self.tables[(self.idx + 1) % self.number_of_tables].left_capacity():
+                #switching to the next table with modulo!
                 self.idx = (self.idx + 1) % self.number_of_tables
 
+            #for the last person, checking if the table is empty and trying to find a non-empty table
             elif i == len(names) - 1 and self.tables[self.idx].left_capacity() == self.tables[self.idx].capacity:
                 for j, table in enumerate(self.tables):
                     if j != self.idx and 1 <= table.left_capacity() < table.capacity:
                         self.idx = j
                         break
-           
+
+           #if all tables are full
             if all([not table.has_free_spot() for table in self.tables]):
                 answer = input("Openspace is full! Do you want to add a table? (y/n) : ")
                 if answer == "y":
@@ -54,9 +58,11 @@ class Openspace():
                     print("Sorry, see you next time.")
                     break
 
+            # changing if the table is full
             while not self.tables[self.idx].has_free_spot():
                 self.idx = (self.idx + 1) % self.number_of_tables
-            
+                
+            #Checking for preferance
             if name in wish_dict:
                 friend = wish_dict[name]
                 for j, table in enumerate(self.tables):
@@ -64,8 +70,7 @@ class Openspace():
                         if table.has_free_spot():
                             self.tables[j].assign_seat(name)
                             seated = True
-                        else:
-                            break
+                        break
 
             self.people_seated += 1
 

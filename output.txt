@@ -1,42 +1,35 @@
 Table 1 :
-  - Ibrahim
-  - Anna
-  - Guillermo
-  - Dan
-  - Loulou
-  - Léon
-Table 2 :
-  - Sitara
-  - Hussein
-  - Vanessa
   - Ibtihel
-  - Po
-  - Lala
-Table 3 :
-  - Uzair
+  - Ibrahim
+  - Mahalakshmi
+  - Imad
+  - Iness
+  - Henri
+Table 2 :
   - Thi
-  - Irene
-  - Hiba
-  - Stephane
-  - Arthur
-Table 4 :
-  - Neha
   - Sooyoung
   - Siegried
-  - Gaetan
-  - Jeong
   - Victor
-Table 5 :
-  - Iness
-  - Mahalakshmi
+  - George
+  - Free
+Table 3 :
+  - Gaetan
+  - Guillermo
+  - Anna
+  - Sitara
+  - Free
+  - Free
+Table 4 :
   - Max
+  - Neha
+  - Uzair
+  - Jeong
+  - Hiba
+  - Vanessa
+Table 5 :
+  - Hussein
+  - Dan
+  - Stephane
+  - Irene
   - Gunay
-  - Imad
-  - Fifi
-Table 6 :
-  - Philip
-  - Dixi
-  - Riri
-  - Remi
-  - Free
-  - Free
+  - Leon

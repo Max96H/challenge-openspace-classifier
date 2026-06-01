@@ -7,13 +7,15 @@ def checking_late_arrivals(open_space, output_filename):
     while input("\nDid more people arrive late? (y/n) : ") == "y":
 
             new_people = []
-
-            try:
-                n = int(input("How many people needs a seats ? "))
-            except TypeError:
-                n = int(input("Please write an integer with digits : "))
-            for i in range(n):
-                new_people.append(input(f"Name {i+1} : "))
+            while True:
+                try:
+                    n = int(input("How many people needs a seats ? "))
+                except ValueError:
+                    print("Please write an integer with digits... ")
+                    continue
+                for i in range(n):
+                    new_people.append(input(f"Name {i+1} : "))
+                break
 
             open_space.organize(new_people)
             open_space.store(output_filename)
